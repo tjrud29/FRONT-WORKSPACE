@@ -1,36 +1,76 @@
 <!DOCTYPE html>
-
-<HTML>
-
+<html>
 <head>
-    <style>
-        button {
-            background-color : #007Bff;
-            color : #fff;
-            padding : 10px 20px; 
-            cursor : pointer;
-            /*그림자 추가*/
-            box-shadow : 2px 2px 5px rgba(0,0,0,0.3);
-            /*마우스를 가져갈 시 색상 반짝이는 효가 추가*/
-            transition : background-color 0.3s, box-shadow 0.3s;
-
-           
-            }
-
-             /*마우스 호버시 스타일 변경*/
-             button:hover {
-                background-color : #007Bff;
-                box-shadow : 20px 20px 5px rgb(20 26 239/50%);
-        }
-
-    </style>
+<link rel = "stylesheet" type = "text/css" href="../html/css/styles.css">
+<!--   ./은 내가 현재 위치한 파일에서 경로 찾기
+        ../은 처음부터 경로 찾기-->
 
 </head>
-
-
 <body>
-    <h2>새 게시글 작성</h2>
-    <button type = "submit">작성완료</button>
-</body>
+    <div class="container">
+        <h1>점심 게시판</h1>
+        <ul class = "post-list">
+            <!-- 게시물 목록 작성하는 곳-->
+            <li class = "post">
+                <h2>맥주창고 역삼점</h2>
+                <p>메뉴 더보기 -> <a href="https://www.instagram.com/lunch_mz/?hl=ko">클릭</a></p>
+            </li>
+            <li class = "post">
+                <h2>명동칼국수 역삼점</h2>
+                <p>명동칼국수 9000원</p>
+            </li>
+        </ul>
 
-</HTML>
+        <div class = "form-container">
+            <!-- 메뉴 추가하는 추가란-->
+            <h2>새 게시물 작성하기</h2>
+            <form class = "post-form">
+                <input type="text" placeholder="제목">
+                <textarea placeholder="내용작성하기"></textarea>
+                <button type="submit" id = "post-button">게시물 작성</button>
+
+                <button onclick = "hihibutton()">버튼  </button>
+                <button onclick = "joinbutton()">회원가입하기</button>
+                <p id = "joinCheck">회원가입을 하는 중입니다.</p>
+            </form>
+            <script>
+                function hihibutton() {
+                    alert("안녕 나는 버튼이라고 해");
+                }
+
+                function joinbutton() {
+                    var txt;
+                    if(confirm("버튼클릭!")) {
+                        txt = "클릭완료 ~";
+
+                    }else{
+                        txt = "회원가입을 완료하지 못함";
+                    }
+                    document.getElementById("joinCheck").innerHTML = txt;
+                    
+                }
+            </script>
+
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function(){
+                    // 1. html 버튼 id 가져오기
+                    const postButton = document.getElementById("post-button");
+                    // 2. 버튼을 클릭할때 실행될 함수를 정의
+                    function buttonClick(){
+                        alert("게시물의 내용을 작성해주세요");
+                    }
+                    // 3. 버튼 클릭 시 실행될 함수 연결
+                    postButton.addEventListener("click", buttonClick);
+                });
+            </script>   
+            
+                
+
+            
+
+        </div>
+    </div>
+</body>
+</html>

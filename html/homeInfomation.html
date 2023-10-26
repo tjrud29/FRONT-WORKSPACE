@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <title> 우리 회사 홈페이지 </title>
+        <meta charset = "utf-8">
+        <style>
+            * { /*별은 전체 선택 */
+                box-sizing : border-box;
+                
+            }
+            header {
+                background-color : #14653a;
+                padding : 8px;
+                text-align : center;
+                font-size : 35px;
+                color : white;
+            }
+                nav{
+                    float : left;
+                    width : 30%;
+                    height : 300px;
+                    background : #ca8181;
+                    padding : 20px;
+                }
+
+                nav ul{
+                    list-style-type : none;
+                    padding : 0;
+                }
+
+                article {
+                    float : left;
+                    padding  : 20px;
+                    width : 200px;
+                    background-color : #bf35a8;
+                    height : 300px;
+                }
+                
+                section::after{
+                    content : "";
+                    display : table;
+                    clear :both;
+                }
+
+                footer {
+                    background-color : #f2f3f3;
+                    padding : 10px;
+                    text-align : center;
+                    color : red;
+                }
+
+                @media (max-width : 600px) {/*모바일버전*/
+                    nav,article{
+                        width : 100%;
+                        height : auto;
+                    }
+                }
+            
+        </style>
+    </head>
+
+    <body>
+        <h2>내 블로그</h2>
+        <p>블로그에 오신걸 환영합니다</p>
+        <header>
+            <h4>서경의 블로그</h4>
+            
+        </header>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href = "https://gyung123.tistory.com/">전체 글 보기</a></li>
+                    <li><a href = "https://gyung123.tistory.com/category/%EC%97%90%EB%9F%AC">에러 글 보기</a></li>
+                    
+                </ul>
+            </nav>
+        
+        <article>
+            <h1>제 블로그에 놀러오세요</h1>
+            <p>프로그래밍 블로그입니다
+            </p>
+        </article>
+
+        <!--아티클도 섹션 안에 넣어야함-->
+     </section>
+    
+    </body>
+
+    <footer>
+        <p>회사소개 |연혁 | 오시는길</p>
+        <input type = "text" placeholder = "검색창"
+    </footer>
+</html>
