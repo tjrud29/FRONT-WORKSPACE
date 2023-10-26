@@ -9,18 +9,22 @@
                 
             }
             header {
-                background-color : #14653a;
-                padding : 8px;
-                text-align : center;
-                font-size : 35px;
+               /* background : linear-gradient(#b06ab3, #4568dc);*/
+                
+               background-color : #ffcef0;
+               padding : 10px ;
+               text-align : center;
+                font-size : 20px;
                 color : white;
+                border : 2px solid #000000;
             }
                 nav{
                     float : left;
                     width : 30%;
-                    height : 300px;
-                    background : #ca8181;
+                    height : 200px;
+                    background : #ffcef0;
                     padding : 20px;
+                    border : 2px solid #000000;
                 }
 
                 nav ul{
@@ -31,23 +35,30 @@
                 article {
                     float : left;
                     padding  : 20px;
-                    width : 200px;
-                    background-color : #bf35a8;
-                    height : 300px;
+                    width : 220px;
+                    background-color : #ffcef0;
+                    height : 200px;
+                    border : 2px solid #000000;
                 }
+
+
                 
                 section::after{
                     content : "";
                     display : table;
                     clear :both;
+                    
                 }
 
                 footer {
-                    background-color : #f2f3f3;
+                    background :linear-gradient(45deg,violet,orange);   /*시작할 생상 정하기*/
+                   /* background-color : #f2f3f3; */
                     padding : 10px;
                     text-align : center;
                     color : red;
+                    border : 1px solid #ccc;
                 }
+                
 
                 @media (max-width : 600px) {/*모바일버전*/
                     nav,article{
@@ -55,30 +66,47 @@
                         height : auto;
                     }
                 }
-            
+
+                
         </style>
     </head>
 
     <body>
-        <h2>내 블로그</h2>
+        <h2>분홍블로그</h2>
         <p>블로그에 오신걸 환영합니다</p>
         <header>
             <h4>서경의 블로그</h4>
+            <img src = "./img/sakuratree.jpg">
             
         </header>
         <section>
             <nav>
                 <ul>
+
                     <li><a href = "https://gyung123.tistory.com/">전체 글 보기</a></li>
                     <li><a href = "https://gyung123.tistory.com/category/%EC%97%90%EB%9F%AC">에러 글 보기</a></li>
                     
                 </ul>
             </nav>
+            
         
         <article>
             <h1>제 블로그에 놀러오세요</h1>
             <p>프로그래밍 블로그입니다
             </p>
+        </article>
+
+        <article>
+            <h2>댓글 작성</h2>  
+            <div class = "comment">
+                <input id="commentInput" placeholder="댓글작성하기">
+                <button onclick="addComment()"> 작성완료</button>
+                <div id = "comments">
+                    
+                </div>
+
+            </div>
+
         </article>
 
         <!--아티클도 섹션 안에 넣어야함-->
@@ -88,6 +116,28 @@
 
     <footer>
         <p>회사소개 |연혁 | 오시는길</p>
-        <input type = "text" placeholder = "검색창"
+        <input type = "text" placeholder = "검색창">
     </footer>
+    <!--댓글 작성 스크립트-->
+    <script>
+        function addComment(){
+            const commentInput = document.getElementById("commentInput");
+            const commentText = commentInput.value;
+    
+            if(commentText.trim() == "") {
+                alert("댓글을 작성해주세요.");
+                return;
+            }
+    
+            const commentsBox = document.getElementById("comments");
+    
+            const commentDIV = document.createElement("div");
+            commentDIV.className ="comment";
+            commentDIV.textContent = commentText;
+    
+            commentsBox.appendChild(commentDIV);
+            commentInput.value = "";
+    
+        }
+    </script>
 </html>

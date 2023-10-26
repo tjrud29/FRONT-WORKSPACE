@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>블로그 게시판</title>
-        <link rel="stylesheet"  type="text/css" href="./css/styles.css">
+        <link rel="stylesheet"  type="text/css" href="./css/style.css">
     </head>
     <body>
         <div id="container">
@@ -11,6 +11,7 @@
                 <!-- 게시물 추가하는 공간-->
             </div>
             <h2>새 게시물 작성</h2>
+            
             <form id="postForm">
                 <label for="title">제목 : </label>
                 <input type="text" id="title" name="title" required>
@@ -42,7 +43,8 @@
                 postDiv.classList.add("post");
                 postDiv.innerHTML = `
                 <h3>${title}</h3>
-
+                <p>${content}</p>
+                <p>게시일 : ${date.toLocaleString()}</p>
                 `;
                 posts.appendChild(postDiv);
 
