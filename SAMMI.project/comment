@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>매물 코멘트 작성!</title>
+
+  </head>
+  <body>
+    <h2>매물 코멘트</h2>
+    <div>
+      <div id="comment-count">댓글 <span id="count">0</span></div>
+      <input type = "text" name = "commentName" placeholder = "댓글을 작성하세요" required>
+      <button onclick = "addcomment()" class="button_submit">작성</button>
+    </div> 
+
+    <div>
+      <button id = "asc_button">최신순</button>
+      <button id = "desc_button">과거순</button>
+    </div>
+
+    <div>
+      
+
+      <div>
+        <!--댓글-->
+
+      </div>
+
+      <div>
+        <!--닉네임과 현재 시간-->
+
+      </div>
+
+      <button type = "button">수정</button>
+      <button type = "button">삭제</button>
+    </div>
+
+
+      
+  </body>
+</html>

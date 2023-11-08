@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>search</title>
+  </head>
+
+
+  <body>
+    <div>
+      <div>
+    <button onclick = "addcomment()"style = "float : left;" >검색</button>
+      </div>
+      
+      <div> 
+    <input type = "text"    placeholder = "검색 내용을 입력해주세요" name = search_bar required>
+  </div>
+
+  </div>
+
+    <div>
+      <label>
+        <p>매매 유형 :</p>
+        <input type = "checkbox" name = "Real_estate_sale_type" value = "monthly_sum">월세
+        <input type = "checkbox" name = "Real_estate_sale_type" value = "long_sum">전세
+        <input type = "checkbox" name = "Real_estate_sale_type" value = "too_long_sum ">매매
+      </label>
+    </div>
+      
+    <div>
+      <div>
+        <p>매물 유형</p>
+      </div>
+
+      <div id = "house_divine">
+        <label>
+          <input type = "checkbox" name = "house_type" value = "apartment">아파트 
+          <input type = "checkbox" name = "house_type" value = "house">단독주택
+          <input type = "checkbox" name = "house_type" value = "small_apartment">빌라
+          <input type = "checkbox" name = "house_type" value = "Officetels">오피스텔
+          <input type = "checkbox" name = "house_type" value = "one_bedroom_apartment">원룸
+        </label>
+      </div>
+    </div>
+
+
+      <div>
+        <div>
+          <p>면적</p>
+        </div>
+      <div id = "area_divine">
+        <label>
+          <input type = "checkbox" name = "area_type" value = "under_10">~10평
+          <input type = "checkbox" name = "area_type" value = "under_20">~20평
+          <input type = "checkbox" name = "area_type" value = "under_30">~30평
+          <input type = "checkbox" name = "area_type" value = "under_40">~40평
+          <input type = "checkbox" name = "area_type" value = "over_41">41~평
+        </label>
+
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <p>방개수</p>
+      </div>
+
+      <div id = "room_divine">
+        <label>
+          <input type = "checkbox" name = "room_count" value = "under_1">1개
+          <input type = "checkbox" name = "room_count" value = "under_2">2개
+          <input type = "checkbox" name = "room_count" value = "under_3">3개
+          <input type = "checkbox" name = "room_count" value = "under_4">4개
+          <input type = "checkbox" name = "room_count" value = "over_5">5개 이상
+        </label>
+
+      </div>
+    </div>
+    
+
+  </body>
+</html>
