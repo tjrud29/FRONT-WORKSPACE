@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이리의 맥 이야기</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .card-text,
+      .card-img-bottom {
+        display: none;
+      }
+      .card:hover .card-text,
+      .card:hover .card-img-bottom {
+        display: block;
+      }
+    </style>
+
+
+    <body style = "background-color : black;">
+        <div class = "hero text-center text-white py-5">
+        <h1 class = "display-4">서경의 맥 이야기</h1>
+        <h2>컴온!!!</h2>
+        <div class = "btn-grout my-3" role = "group" aria-label = "게시판">
+          <button type = "button" class = "btn btn-secondary" onclick = "showBoard('notice')">공지사항</button>
+          <button type = "button" class = "btn btn-secondary" onclick = "showBoard('notice')">게시판1</button>
+          <button type = "button" class = "btn btn-secondary" onclick = "showBoard('notice')">게시판2</button>
+        </div>
+    </div>
+
+    <div class = "container my-5">
+      <div id = "notice" style = "display : block;">
+        <button type = "button" class = "btn btn-primary my-3" onclick = "addPostPage('notice')">게시글 작성</button>
+
+      </div>
+      <div id = "board1" style = "display : none;">
+        <button type = "button" class = "btn btn-primary my-3" onclick = "addPostPage('notice')">게시글 작성</button>
+      </div>
+
+      <div id = "board2" style ="display : none;">
+        <button type = "button" class = "btn btn-paimary my-3" onclick = "addPostPage('notice')">게시글 작성</button>
+      </div>
+    </div>  
+
+
+    <div class = "modal fade show" id = "addPostModal" tabindex = "-1" aria-labelledby= "addPostModelLabel" 
+                  data-board-id = "notice" style = "display : block;" aria-modal = "true" role = "dialog">
+
+    <div class = "modal-dialog" role = "document">
+      <div class = "modal-content">
+        <div modal-header>
+          <h5 class = "modal-title" id = addPostModalLabel>게시글 작성 - notice </h5>
+          <button type = "button" class = "close" data-dismiss = "modal" aria-label = "close">
+            <span aria-hidden = "true">X</span>
+          </button>
+        </div>
+        <div class = "modal-body">
+          <form onsubmit = "addpost(event)">
+          <div class = form-group>
+            <label for = "postTitle">제목</label>
+            <input type = "text" class = "form-control"   id = "postTitle" required>
+          </div>
+
+          <div class = "form-group">
+            <label for = "postContent">내용</label>
+            <textarea class = "form-control" id = "postContent" rows= 5; required></textarea> 
+          </div>
+
+            <button type = "submit" id = "btn btn-primary">작성</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    function getPosts(boardId) {
+      var post = localStorage.getItem(boardId)
+      if(post) {
+          document.getElementById(boardId).innerHTML = posts;
+          var deleteBtns = document.querySelectorAll (
+            '#' + boardId + ".btn-danger"
+          );
+        for(var i = 0; i < deleteBtns.length; i++) {
+          deleteBtns[i].addEventListener("click", function() {
+            this.parentNode.parentNode.remove();
+            savePosts(boardId);
+          });
+         }
+       }
+    }
+
+    function savePosts(boardId) {
+      var postsDiv = document.getElementById(boardId);
+      localStorage.setItem(boardId,postsDiv.innerHTML);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>     

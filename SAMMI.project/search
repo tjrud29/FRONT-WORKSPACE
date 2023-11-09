@@ -75,6 +75,21 @@
 
       </div>
     </div>
+
+  <div>
+    <div>
+      <label> 첫째 칸
+        <input type = "text"> ~ <input type = "text"> 
+      </label>
+    </div>
+    <br>
+    <div>
+      <label> 둘째 칸
+        <input type = "text"> ~ <input type = "text"> 
+      </label>
+    </div>
+    
+  </div>
     
 
   </body>
