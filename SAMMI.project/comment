@@ -17,22 +17,27 @@
       <button id = "desc_button">과거순</button>
     </div>
 
-    <div>
-      
+    <div id = "notice" style = "display : block;">
+        <!--코멘트 전체 박스(달려있는 댓글 전체)-->
+      <div class = "comment_box">
+        <div class = "comment_title_box">
+          <ul class = "comment_ul">
+            <li><b>댓글 작성 예시</b></li>
+            <small class = "date">2023-11-10 09:02:11</small>
+            <button type = "button" class = "button_delete">삭제</button>
+            <button type = "button" class = "button_update">수정</button>
+          </ul>
 
-      <div>
-        <!--댓글-->
+           
 
+          
+         </div>
       </div>
 
-      <div>
-        <!--닉네임과 현재 시간-->
-
-      </div>
-
-      <button type = "button">수정</button>
-      <button type = "button">삭제</button>
+     
     </div>
+
+    
 
 
       
